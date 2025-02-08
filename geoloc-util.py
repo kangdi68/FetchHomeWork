@@ -49,5 +49,5 @@ if __name__ == '__main__':
             print(place_name, ":")
             print("latitude={}, longitude={}".format(latitude, longitude))
         else:
-            print(f"Error: {input_data[i]} is not valid input")
+            print(f"Failed: {input_data[i]} is not valid input")
             break
