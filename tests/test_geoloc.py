@@ -12,6 +12,7 @@ def test_place_name_positive(value):
     result = data.decode()
     print(result)
     assert result.find("Error")==-1, f"API error with {result}"
+    assert result.find("Failed") == -1, f"error with {result}"
 
 @pytest.mark.parametrize('value', GeoInputData.NEGATIVE_INPUT )
 def test_place_name_negative(value):
