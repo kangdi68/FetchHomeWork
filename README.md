@@ -4,7 +4,7 @@ requirement
 
 How to execute this utility from command line
 * python3 geoloc-util.py --locations "Bellevue, WA" "98006"
-   - output will be followings.
+   - output will be followings:
     check with placement name=  Bellevue WA
     Bellevue, Washington US :
     latitude=47.6144219, longitude=-122.192337, local_name=벨뷰
