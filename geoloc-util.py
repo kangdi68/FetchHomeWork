@@ -35,19 +35,21 @@ if __name__ == '__main__':
         zip_code = search_zip.search(input_data[i])
         if place is not None and len(place.groups()) == 2:
             data=get_information_by_using_place_name(place.group(1).strip(), place.group(2).strip())
-            latitude = data[0]['lat']
-            longitude = data[0]['lon']
-            place_name = f'{data[0]['name']}, {data[0]['state']} {data[0]['country']}'
-            local_name = data[0]['local_names']['ko']
-            print(place_name, ":")
-            print("latitude={}, longitude={}, local_name={}".format(latitude, longitude, local_name))
+            if data is not None:
+                latitude = data[0]['lat']
+                longitude = data[0]['lon']
+                place_name = f'{data[0]['name']}, {data[0]['state']} {data[0]['country']}'
+                local_name = data[0]['local_names']['ko']
+                print(place_name, ":")
+                print("latitude={}, longitude={}, local_name={}".format(latitude, longitude, local_name))
         elif zip_code is not None and len(zip_code.groups()) == 1:
             data=get_information_by_using_zip_code(zip_code.group(1))
-            latitude = data['lat']
-            longitude = data['lon']
-            place_name = f'{data['name']}, {data['country']} {data['zip']}'
-            print(place_name, ":")
-            print("latitude={}, longitude={}".format(latitude, longitude))
+            if data is not None:
+                latitude = data['lat']
+                longitude = data['lon']
+                place_name = f'{data['name']}, {data['country']} {data['zip']}'
+                print(place_name, ":")
+                print("latitude={}, longitude={}".format(latitude, longitude))
         else:
             print(f"Failed: {input_data[i]} is not valid input")
             break

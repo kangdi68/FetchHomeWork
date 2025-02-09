@@ -23,5 +23,9 @@ def test_place_name_negative(value):
     data, err = process_check.communicate()
     result = data.decode()
     print(result)
-    assert result.find("Error")==-1, f"API error with {result}"
-    assert result.find("Failed")!=-1, f"error with {result}"
+    if "00000" in value:
+        assert result.find("Error") != -1, f"API error with {result}"
+        assert result.find("Failed") == -1, f"error with {result}"
+    else:
+        assert result.find("Error")==-1, f"API error with {result}"
+        assert result.find("Failed")!=-1, f"error with {result}"

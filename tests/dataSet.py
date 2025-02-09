@@ -9,6 +9,7 @@ class GeoInputData:
 
     NEGATIVE_INPUT =  [
         pytest.param(['Bellevue'], id='only city'),
-        pytest.param(['980063'], id='incorrect_zip_correct'),
-        pytest.param(['WA'], id='only state code')
+        pytest.param(['980063'], id='incorrect_length_zip'),
+        pytest.param(['WA'], id='only state code'),
+        pytest.param(['00000'], id='invalid_zip')
     ]
