@@ -2,16 +2,17 @@ import argparse
 import requests
 import re
 
+auth_key="f897a99d971b5eef57be6fafa0d83239"
 def get_information_by_using_place_name(city, state):
     print("check with placement name= ", city, state)
-    location_url = f"http://api.openweathermap.org/geo/1.0/direct?q={city},{state},US&appid=f897a99d971b5eef57be6fafa0d83239"
+    location_url = f"http://api.openweathermap.org/geo/1.0/direct?q={city},{state},US&appid={auth_key}"
     data = api_call(location_url)
     return data
 
 
 def get_information_by_using_zip_code(zip_code):
     print("check with zip code=", zip_code)
-    zip_url = f"http://api.openweathermap.org/geo/1.0/zip?zip={zip_code},US&appid=f897a99d971b5eef57be6fafa0d83239"
+    zip_url = f"http://api.openweathermap.org/geo/1.0/zip?zip={zip_code},US&appid={auth_key}"
     data = api_call(zip_url)
     return data
 
